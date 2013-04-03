@@ -18,5 +18,5 @@ Configure::write('Session', array(
 	)
 ));
 
-After setting up the Croogo Config we have to create the sessions Folder unter app/tmp/ and here we go,
+After setting up the Croogo Config we have to create the sessions Folder under app/tmp/ and here we go,
 install the ClearSession Plugin and delete all saved Session Files from app/tmp/sessions/ with one klick.
