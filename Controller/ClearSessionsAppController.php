@@ -1,16 +1,15 @@
 <?php
-    /**
-     * ClearSession
-     *
-     * PHP version 5
-     *
-     * @category ClearSession.Controller
-     * @package  Croogo.ClearSession
-     * @version  1.4, 1.5
-     * @author   Lukas Marks <info@lumax-web.de>
-     * @link     https://www.lumax-web.de
-     */
-	 
-    class ClearSessionsAppController extends AppController {
+/**
+ * ClearSession
+ *
+ * @category Controller
+ * @package  ClearSession
+ * @version  2.x
+ * @author   Lukas Marks <info@lumax-web.de>
+ * @link     http://www.lumax-web.de/
+ */
+App::uses('AppController', 'Controller');
 
-    }
+class ClearSessionsAppController extends AppController {
+
+}

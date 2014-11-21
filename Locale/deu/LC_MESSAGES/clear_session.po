@@ -1,0 +1,10 @@
+# German translation of ClearLog Plugin
+#
+msgid ""
+msgstr ""
+
+msgid "Clear Session"
+msgstr "Sessions löschen"
+
+msgid "Sessions have been deleted, please login."
+msgstr "Die Sessions wurden gelöscht, bitte loggen Sie sich ein."
