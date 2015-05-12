@@ -1,6 +1,6 @@
 <?php
 /**
- * ClearSession
+ * ClearSession Model
  *
  * @category Model
  * @package  ClearSession

@@ -9,8 +9,8 @@ CroogoNav::add('settings.children.clear_session', array(
 		'admin' => true,
 		'plugin' => 'clear_session',
 		'controller' => 'clear_sessions',
-		'action' => 'clear'
-	),
+		'action' => 'index'
+        ),
 	'weight' => 300,
 	'children' => array(
 	),

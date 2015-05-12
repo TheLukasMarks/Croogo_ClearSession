@@ -1,6 +1,6 @@
 <?php
 /**
- * ClearSession
+ * ClearSession Controller
  *
  * @category Controller
  * @package  ClearSession

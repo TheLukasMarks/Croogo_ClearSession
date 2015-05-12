@@ -1,7 +1,13 @@
 {
-    "name": "ClearSession",
-    "description": "ClearSession Plugin",
-    "author": "Lukas Marks",
-    "authorEmail": "info@lumax-web.de",
-    "authorUrl": "http://www.lumax-web.de"
+	"name": "ClearSession",
+	"description": "ClearSession Plugin",
+	"author": "Lukas Marks",
+	"authorEmail": "info@lumax-web.de",
+	"authorUrl": "http://www.lumax-web.de/",
+
+	"dependencies": {
+		"plugins": [
+			"croogo"
+		]
+	}
 }
