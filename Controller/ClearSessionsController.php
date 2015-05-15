@@ -1,13 +1,17 @@
 <?php
 /**
- * ClearSession Controller
+ * ClearSession
+ * Copyright (c) Lukas Marks (http://lumax-web.de/)
  *
- * @category Controller
- * @package  ClearSession
- * @version  2.x
- * @author   Lukas Marks <info@lumax-web.de>
- * @link     http://www.lumax-web.de/
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Lukas Marks (http://lumax-web.de/)
+ * @since         0.1
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+
 App::uses('ClearSessionsAppController', 'ClearSession.Controller');
 
 class ClearSessionsController extends ClearSessionsAppController {
@@ -84,7 +88,10 @@ class ClearSessionsController extends ClearSessionsAppController {
 
 		$limitCounter = count($sessions);
 
-		$this->set(compact('sessions', 'limitCounter'));
+		$this->set(compact(
+			'sessions',
+			'limitCounter'
+		));
 	}
 	
 	/**
@@ -107,13 +114,13 @@ class ClearSessionsController extends ClearSessionsAppController {
 
 		if (count($ids) == 0 || $action == null) {
 			$this->Session->setFlash(__d('clear_session', 'No Sessions selected.'), 'default', array('class' => 'error'));
-			$this->redirect(array('action' => 'index'));
+			return $this->redirect(array('action' => 'index'));
 		}
 		if ($action == 'delete' && $this->ClearSession->deleteAll(array('ClearSession.id' => $ids), true, true)) {
 			$this->Session->setFlash(__d('clear_session', 'Sessions deleted successfully.'), 'default', array('class' => 'success'));
 		} else {
 			$this->Session->setFlash(__d('clear_session', 'An error occurred. Please, try again.'), 'default', array('class' => 'error'));
 		}
-		$this->redirect(array('action' => 'index'));
+		return $this->redirect(array('action' => 'index'));
 	}
 }

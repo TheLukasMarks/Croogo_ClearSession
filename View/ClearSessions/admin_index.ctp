@@ -1,5 +1,17 @@
 <?php
-	
+/**
+ * ClearSession
+ * Copyright (c) Lukas Marks (http://lumax-web.de/)
+ *
+ * Licensed under The MIT License
+ * For full copyright and license information, please see the LICENSE.txt
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright (c) Lukas Marks (http://lumax-web.de/)
+ * @since         0.1
+ * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ */
+
 if (!$this->request->is('ajax') && isset($this->request->params['admin'])):
 	$this->Html->script('ClearSession.sessions', array('inline' => false));
 endif;
@@ -11,7 +23,13 @@ $this->Html->addCrumb('', DS . 'admin', array('icon' => 'home'))
 
 $this->append('search', $this->element('Admin' . DS . 'clear_sessions_search'));
 
-echo $this->Form->create('ClearSession', array('url' => array('plugin' => 'clear_session', 'controller' => 'clear_sessions', 'action' => 'process')));
+echo $this->Form->create('ClearSession', array(
+	'url' => array(
+		'plugin' => 'clear_session',
+		'controller' => 'clear_sessions',
+		'action' => 'process',
+	),
+));
 ?>
 <table class="table table-striped">
 	<?php
@@ -32,7 +50,7 @@ echo $this->Form->create('ClearSession', array('url' => array('plugin' => 'clear
 		$rows = array();
 		foreach ($sessions as $session):
 			$rows[] = array(
-				$this->Form->checkbox('ClearSession.' . $session['ClearSession']['id'] . '.id'),
+				$this->Form->checkbox('ClearSession' . '.' . $session['ClearSession']['id'] . '.' . 'id'),
 				$session['ClearSession']['id'],
 				$this->Text->truncate(
 					$session['ClearSession']['data'],

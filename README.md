@@ -1,15 +1,16 @@
-Croogo_ClearSession
-===================
+# ClearSession
 
-ClearSession Plugin for CakePHP & Croogo 2.x Versions.
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
 
-This Plugin works with a specific CakePHP/ Croogo Session storage Configuration.
-Before installing this Plugin change the Session Configuration in app/Config/croogo.php to
+Croogo CMS ClearSession plugin for session record delete from the database table.
 
-'defaults' => 'database',
+## Installing ClearSession
 
-Here the full Config Setup, I use on a blank Croogo Installation:
+This plugin works with a specific CakePHP/ Croogo session storage configuration.
+Before installing this plugin change the session configuration in app/Config/croogo.php
 
+
+``` php
 Configure::write('Session', array(
 	'defaults' => 'database',
 	// 'timeout' => 30, // The session will timeout after 30 minutes of inactivity
@@ -21,6 +22,37 @@ Configure::write('Session', array(
 		'session.cookie_httponly' => true
 	),
 ));
+```
+After setting up the Croogo configuration we have to create the cake_sessions database table
 
-After setting up the Croogo Config we have to create the cake_sessions database table and here we go,
-install the ClearSession Plugin and delete all selected sessions from the database table with one klick.
+``` sql
+CREATE TABLE `cake_sessions` (
+  `id` varchar(255) NOT NULL DEFAULT '',
+  `data` text,
+  `expires` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+```
+
+Install the ClearSession Plugin and delete all selected sessions from the database table with one klick.
+
+## Issues
+
+Please report any issues you have with the plugin to the [issue tracker](http://github.com/LuMAXW3B/Croogo_ClearSession/issues) on github.
+
+## License
+
+Asset Compress is offered under an [MIT license](http://www.opensource.org/licenses/mit-license.php).
+
+## Copyright
+
+2015 Lukas Marks (http://lumax-web.de/)
+
+### Authors
+
+See the [github contributors list](http://github.com/LuMAXW3B/Croogo_ClearSession/graphs/contributors)
+
+### Changelog
+
+See CHANGELOG for changes only available on `master`. See
+[github releases](http://github.com/LuMAXW3B/Croogo_ClearSession/releases) for changelogs on previous releases.
