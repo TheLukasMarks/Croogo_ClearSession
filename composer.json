@@ -1,0 +1,34 @@
+{
+	"name": "lumaxw3b/croogo_clearsession",
+	"type": "croogo-plugin",
+	"description": "ClearSession plugin for Croogo CMS 2.x versions.",
+	"homepage": "https://github.com/lumaxw3b/croogo_clearsession",
+	"license": "MIT",
+	"keywords": [
+		"cakephp",
+		"croogo",
+		"session",
+		"clear session"
+	],
+	"authors": [
+		{
+			"name": "Lukas Marks",
+			"email": "info@lumax-web.de",
+			"homepage": "http://lumax-web.de/",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"croogo/croogo": "~2.0",
+		"composer/installers": "*"
+	},
+	"support": {
+		"email": "info@lumax-web.de",
+		"issues": "https://github.com/lumaxw3b/croogo_clearsession/issues",
+		"source": "https://github.com/lumaxw3b/croogo_clearsession"
+	},
+	"extra": {
+		"installer-name": "ClearSession"
+	}
+}
