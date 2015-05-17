@@ -1,6 +1,7 @@
 # ClearSession
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
+[![Total Downloads](https://img.shields.io/packagist/dt/lumaxw3b/croogo_clearsession.svg?style=flat-square)](https://packagist.org/packages/lumaxw3b/croogo_clearsession)
 
 Croogo CMS ClearSession plugin for session record delete from the database table.
 
