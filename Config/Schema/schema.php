@@ -38,6 +38,7 @@ class ClearSessionSchema extends CakeSchema {
 	 * @return void
 	 */
 	public function after($event = array()) {
+		return true;
 	}
 
 	/**
@@ -51,5 +52,4 @@ class ClearSessionSchema extends CakeSchema {
 		'expires' => array('type' => 'integer', 'null' => true, 'default' => null),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
 	);
-
 }

@@ -11,7 +11,6 @@
  * @since         0.1
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-
 App::uses('ClearSessionAppModel', 'ClearSession.Model');
 
 class ClearSession extends ClearSessionAppModel {
@@ -55,16 +54,5 @@ class ClearSession extends ClearSessionAppModel {
 				'ClearSession.data',
 			),
 		),
-	);
-	
-	/**
-	 * Display fields for this model
-	 *
-	 * @var array
-	 */
-	protected $_displayFields = array(
-		'id',
-		'data',
-		'expires',
 	);
 }

@@ -16,12 +16,22 @@ if (!$this->request->is('ajax') && isset($this->request->params['admin'])):
 	$this->Html->script('ClearSession.sessions', array('inline' => false));
 endif;
 
-$this->set('showActions', false);
 $this->extend(DS . 'Common' . DS . 'admin_index');
 $this->Html->addCrumb('', DS . 'admin', array('icon' => 'home'))
 ->addCrumb(__d('clear_session', 'Sessions'));
 
-$this->append('search', $this->element('Admin' . DS . 'clear_sessions_search'));
+$this->append('actions');
+echo $this->Croogo->adminAction(
+	__d('clear_session', 'Delete All'),
+	array('action' => 'delete_all'),
+	array(
+		'button' => 'success',
+		'method' => 'post',
+	)
+);
+$this->end();
+
+$this->append('search', $this->element('Admin' . DS . 'ClearSessions' . DS . 'search'));
 
 echo $this->Form->create('ClearSession', array(
 	'url' => array(
@@ -44,9 +54,7 @@ echo $this->Form->create('ClearSession', array(
 	<thead>
 		<?php echo $tableHeaders; ?>
 	</thead>
-	
 	<?php
-	
 		$rows = array();
 		foreach ($sessions as $session):
 			$rows[] = array(
@@ -61,7 +69,7 @@ echo $this->Form->create('ClearSession', array(
 						'html' => false
 					)),
 				$session['ClearSession']['expires'],
-				date('d.m.Y H:i:s', $session['ClearSession']['expires']),
+				$this->Time->format('d.m.Y H:i:s', $session['ClearSession']['expires']),
 			);
 		endforeach;
 		echo $this->Html->tableCells($rows);
